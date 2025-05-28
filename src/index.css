@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply h-full;
+  }
+  body {
+    @apply h-full font-sans text-gray-800 bg-gray-50;
+  }
+  #root {
+    @apply h-full;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-6 py-2 rounded-full transition duration-200 font-medium;
+  }
+  .btn-primary {
+    @apply bg-primary-600 text-white hover:bg-primary-700;
+  }
+  .btn-secondary {
+    @apply bg-secondary-500 text-white hover:bg-secondary-600;
+  }
+  .btn-outline {
+    @apply border border-primary-600 text-primary-600 hover:bg-primary-50;
+  }
+  .card {
+    @apply bg-white rounded-xl shadow-md overflow-hidden;
+  }
+  .input-field {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+  }
+}
+
+/* Swiper animations */
+.swipe-card {
+  position: relative;
+  transform-origin: bottom center;
+}
+
+.swipe-left {
+  animation: swipeLeft 0.5s forwards;
+}
+
+.swipe-right {
+  animation: swipeRight 0.5s forwards;
+}
+
+.swipe-up {
+  animation: swipeUp 0.5s forwards;
+}
+
+@keyframes swipeLeft {
+  to {
+    transform: translateX(-150%) rotate(-20deg);
+    opacity: 0;
+  }
+}
+
+@keyframes swipeRight {
+  to {
+    transform: translateX(150%) rotate(20deg);
+    opacity: 0;
+  }
+}
+
+@keyframes swipeUp {
+  to {
+    transform: translateY(-150%);
+    opacity: 0;
+  }
+}
